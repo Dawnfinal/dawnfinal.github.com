@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Dawn Zhang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .social-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: background 0.3s ease;
+        }
+        .ins-tag {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    
+        .iframe-container {
+            margin-top: 20px; 
+            border-radius: 12px; 
+            overflow: hidden; 
+            border: 1px solid rgba(128,128,128,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">DAWN.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">🌓</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="contact-wrapper">
+            <section class="form-side">
+                <h1>Say <span class="highlight">Hello</span></h1>
+                <p>Have a question or just want to chat? Fill out the form below.</p>
+                <form action="https://formspree.io/f/mgorzylv" method="POST" id="contact-form" style="margin-top: 20px;">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Your Message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </section>
+
+            <section class="social-side">
+                <div class="social-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" style="width: 60px; margin-bottom: 10px;">
+                    <p>Follow my creative journey</p>
+                    <div class="ins-tag">@tuna_in_the_freezer</div>
+                    
+                    <div class="iframe-container">
+                        <iframe 
+                            src="https://www.instagram.com/p/C69mI_ivXo2/embed" 
+                            width="100%" 
+                            height="450" 
+                            frameborder="0" 
+                            scrolling="no" 
+                            allowtransparency="true">
+                        </iframe>
+                    </div>
+
+                    <a href="https://www.instagram.com/tuna_in_the_freezer" target="_blank" class="btn btn-secondary" style="margin-top: 20px; display: block;">
+                        View Full Profile
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year"></span> Dawn Zhang. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeBtn = document.getElementById('theme-toggle');
+     
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+
+     
+        if (themeBtn) {
+            themeBtn.onclick = function() {
+                document.body.classList.toggle('dark-mode');
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            };
+        }
+
+      
+        const yearDisplay = document.getElementById('year');
+        if (yearDisplay) {
+            yearDisplay.textContent = new Date().getFullYear();
+        }
+    });
+    </script>
+</body>
+</html>

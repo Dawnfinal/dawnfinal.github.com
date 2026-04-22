@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Dawn Zhang</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BVMRGGPFY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1BVMRGGPFY');
+</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">DAWN.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">🌓</button>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 60px 0; min-height: 60vh;">
+        <h1>Privacy <span class="highlight">Policy</span></h1>
+        
+        <p style="margin-top: 20px;">Your privacy is important to me. This website (Dawn Zhang's Portfolio) does not collect any personal data other than what you voluntarily provide via the contact form.</p>
+        
+        <a href="index.html" class="btn btn-primary" style="margin-top: 30px; display: inline-block;">← Back to Home</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year">2026</span> Dawn Zhang. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="privacy.html" class="active">Privacy Policy</a> | 
+                <a href="terms.html">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeBtn = document.getElementById('theme-toggle');
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+
+        if (themeBtn) {
+            themeBtn.onclick = function() {
+                document.body.classList.toggle('dark-mode');
+                if (document.body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            }
+        }
+
+      
+        const yearSpan = document.getElementById('year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    });
+    </script>
+</body>
+</html>

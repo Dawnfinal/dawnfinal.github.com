@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Dawn Zhang</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BVMRGGPFY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1BVMRGGPFY');
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        .modal-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        #caption-container {
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+            max-width: 80%;
+        }
+
+        #modal-title {
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        #modal-desc {
+            font-size: 1rem;
+            font-weight: 300;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+
+       
+        .modal-content {
+            max-height: 70vh !important;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">DAWN.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">🌓</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="gallery-header" style="margin: 40px 0;">
+            <h1>Selected <span class="highlight">Works</span></h1>
+        </section>
+
+        <section class="project-section">
+            <div class="project-meta">
+                <h2>fog</h2>
+            </div>
+            <div class="photo-grid">
+                <figure class="photo-item">
+                    <img src="fog/image7.JPG" alt="Fog series" data-title="Did you see anything?" data-desc="A figure dissolving into the fog, where sea and sky become indistingguishable">
+                </figure>
+                <figure class="photo-item">
+                    <img src="fog/image8.JPG" alt="Fog series" data-title="Fish day" data-desc="A figure suspended between light and structure, like a moment slipping into another reality">
+                </figure>
+                <figure class="photo-item">
+                    <img src="fog/image9.JPG" alt="Fog series" data-title="How was your day?" data-desc="In the fog, the world softens and disappears-only fragments of color remain">
+                </figure>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="project-section">
+            <div class="project-meta">
+                <h2>Yosemite</h2>
+            </div>
+            <div class="photo-grid">
+                <figure class="photo-item">
+                    <img src="Yosemite/image10.JPG" alt="Yosemite" data-title="What do you think about this?" data-desc="Lost in thought">
+                </figure>
+                <figure class="photo-item">
+                    <img src="Yosemite/image11.JPG" alt="Yosemite" data-title="Wet&Dry" data-desc="On a dry, heated afternoon, the air turned damp everything near the waterfall was covered in moisture">
+                </figure>
+                <figure class="photo-item">
+                    <img src="Yosemite/image12.JPG" alt="Yosemite series" data-title="Class" data-desc="In a quiet corner of campus, the stillness of the space is shaped by light and shadow">
+                </figure>
+                <figure class="photo-item">
+                    <img src="Yosemite/image13.JPG" alt="Yosemite series" data-title="Long time ago" data-desc="Across time, this landscape has remained the same seen by countless eyes, yet never the same twice">
+                </figure>
+                <figure class="photo-item">
+                    <img src="Yosemite/image14.JPG" alt="Yosemite series" data-title="Rafael" data-desc="My instructor">
+                </figure>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <section class="project-section">
+            <div class="project-meta">
+                <h2>Pre-wash</h2>
+            </div>
+            <div class="photo-grid">
+                <figure class="photo-item">
+                    <img src="Pre-wash/photo1.JPG" alt="Pre-wash series" data-title="King's Cross" data-desc="Figures drift though the space, dissolving into light and shadow">
+                </figure>
+                <figure class="photo-item">
+                    <img src="Pre-wash/photo2.JPG" alt="Pre-wash series" data-title="Endless system" data-desc="Lines converge into the distance, turning a functional structure into a visual abstraction">
+                </figure>
+                <figure class="photo-item">
+                    <img src="Pre-wash/photo3.JPG" alt="Pre-wash series" data-title="Constructed uniformity" data-desc="Uniformity exists only as an appearance, shaped by how we perceive it">
+                </figure>
+                <figure class="photo-item">
+                    <img src="Pre-wash/photo4.JPG" alt="Pre-wash series" data-title="Layered Presence" data-desc="The body dissolves into shadow and reflection, where identity becomes layered and uncertain">
+                </figure>
+                <figure class="photo-item">
+                    <img src="Pre-wash/photo5.JPG" alt="Pre-wash series" data-title="Alone in the Horizon" data-desc="At the edge of land and water, the figure stands between presence and disappearance">
+                </figure>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year">2026</span> Dawn Zhang. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div id="lightbox-modal" class="modal">
+        <span class="close-btn">&times;</span>
+        <div class="modal-wrapper">
+            <img class="modal-content" id="enlarged-img">
+            <div id="caption-container">
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+     
+        const themeBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        if (localStorage.getItem('theme') === 'dark') body.classList.add('dark-mode');
+        if (themeBtn) {
+            themeBtn.onclick = function() {
+                body.classList.toggle('dark-mode');
+                localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+            };
+        }
+
+     
+        const yearSpan = document.getElementById('year');
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+      
+        const modal = document.getElementById('lightbox-modal');
+        const modalImg = document.getElementById('enlarged-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const closeBtn = document.querySelector('.close-btn');
+        const galleryImages = document.querySelectorAll('.photo-item img');
+
+        if (modal && modalImg && galleryImages.length > 0) {
+            galleryImages.forEach(img => {
+                img.style.cursor = 'pointer'; 
+                img.onclick = function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    
+                  
+                    modalTitle.textContent = this.getAttribute('data-title') || "";
+                    modalDesc.textContent = this.getAttribute('data-desc') || "";
+                    
+                    document.body.style.overflow = 'hidden'; 
+                }
+            });
+
+            if (closeBtn) {
+                closeBtn.onclick = function() {
+                    modal.style.display = "none";
+                    document.body.style.overflow = 'auto';
+                }
+            }
+
+            modal.onclick = function(event) {
+                if (event.target === modal || event.target.className === 'modal-wrapper') {
+                    modal.style.display = "none";
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Dawn Zhang</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BVMRGGPFY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1BVMRGGPFY');
+</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">DAWN.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="projects.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">🌓</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="about-intro" style="margin-top: 40px;">
+            <h1>Dawn <span class="highlight">Zhang</span></h1>
+            <p class="artist-statement">
+                I am a <strong>Photography and Media</strong> student at <strong>CalArts</strong>. 
+            </p>
+        </section>
+
+        <section class="bio" style="margin-top: 30px;">
+            <h2>Artist Statement</h2>
+            <p>Focusing on the still image as a medium for narrative, my practice involves capturing moments that challenge perception. Through my lens, I aim to document the unseen and the overlooked.</p>
+            
+            <h3 style="margin-top: 40px;">Education</h3>
+            <p>BFA1 in Photography and Media – <em>California Institute of the Arts</em></p>
+            
+            <h3 style="margin-top: 20px;">Exhibitions</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                <li>D300 BFA1 Group Final Exhibition – April 30, 2026</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year">2026</span> Dawn Zhang. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+        }
+
+     
+        if (themeBtn) {
+            themeBtn.onclick = function() {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            };
+        }
+
+       
+        const yearSpan = document.getElementById('year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Dawn Zhang</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1BVMRGGPFY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1BVMRGGPFY');
+</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <div class="logo">DAWN.</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">🌓</button>
+        </nav>
+    </header>
+
+    <main class="container" style="padding: 60px 0; min-height: 60vh;">
+        <h1>Terms of <span class="highlight">Service</span></h1>
+        
+        <p style="margin-top: 20px;">Welcome to Dawn Zhang's professional portfolio. By accessing this website, you agree to the following terms:</p>
+        
+        <h2 style="margin-top: 30px;">1. Content Usage</h2>
+        <p>All projects, code samples, and designs displayed on this site are the intellectual property of <strong>Dawn Zhang</strong> unless otherwise stated. They are presented here for educational and recruitment purposes.</p>
+        
+        <h2 style="margin-top: 30px;">2. Academic Honesty</h2>
+        <p>This site is a final project for <strong>ICOM-101</strong> and <strong>MTEC-617</strong>. Any unauthorized duplication of this site's specific design for other academic submissions is prohibited.</p>
+        
+        <h2 style="margin-top: 30px;">3. External Links</h2>
+        <p>This site contains links to external platforms like GitHub and LinkedIn. We are not responsible for the content or privacy practices of these external sites.</p>
+        
+        <a href="index.html" class="btn btn-secondary" style="margin-top: 30px; display: inline-block;">Return to Home</a>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="year">2026</span> Dawn Zhang. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="privacy.html">Privacy Policy</a> | 
+                <a href="terms.html" class="active">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+       
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+        }
+
+        if (themeBtn) {
+            themeBtn.onclick = function() {
+                body.classList.toggle('dark-mode');
+                
+                
+                if (body.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            }
+        }
+
+
+        if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    });
+    </script>
+</body>
+</html>
